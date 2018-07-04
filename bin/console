@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "sales_taxes"
+require 'pp'
+
+# You can add fixtures and/or initialization code here to make experimenting
+# with your gem easier. You can also use a different console, if you like.
+
+# (If you use this, don't forget to add pry to your Gemfile!)
+# require "pry"
+# Pry.start
+
+order = <<~HEREDOC
+	2 book at 12.49
+	1 music CD at 14.99
+	1 chocolate bar at 0.85
+HEREDOC
+
+#pp SalesTaxes::OrderParser.new(order).to_hash
+pp SalesTaxes::Recipit.new(order).to_hash
+
+order = <<~HEREDOC
+	1 imported box of chocolates at 10.00
+	1 imported bottle of perfume at 47.50
+HEREDOC
+
+#pp SalesTaxes::OrderParser.new(order).to_hash
+pp SalesTaxes::Recipit.new(order).to_hash
+
+order = <<~HEREDOC
+	1 imported bottle of perfume at 27.99
+	1 bottle of perfume at 18.99
+	1 packet of headache pills at 9.75
+	3 box of imported chocolates at 11.25
+HEREDOC
+
+#pp SalesTaxes::OrderParser.new(order).to_hash
+pp SalesTaxes::Recipit.new(order).to_hash
+
+require "irb"
+IRB.start(__FILE__)
