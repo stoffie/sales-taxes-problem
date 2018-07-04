@@ -18,7 +18,7 @@ order = <<~HEREDOC
 HEREDOC
 
 #pp SalesTaxes::OrderParser.new(order).to_hash
-pp SalesTaxes::Recipit.new(order).to_hash
+pp SalesTaxes::Receipt.new(order).to_hash
 
 order = <<~HEREDOC
 	1 imported box of chocolates at 10.00
@@ -26,7 +26,7 @@ order = <<~HEREDOC
 HEREDOC
 
 #pp SalesTaxes::OrderParser.new(order).to_hash
-pp SalesTaxes::Recipit.new(order).to_hash
+pp SalesTaxes::Receipt.new(order).to_hash
 
 order = <<~HEREDOC
 	1 imported bottle of perfume at 27.99
@@ -36,7 +36,7 @@ order = <<~HEREDOC
 HEREDOC
 
 #pp SalesTaxes::OrderParser.new(order).to_hash
-pp SalesTaxes::Recipit.new(order).to_hash
+pp SalesTaxes::Receipt.new(order).to_hash
 
 require "irb"
 IRB.start(__FILE__)

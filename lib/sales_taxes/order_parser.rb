@@ -6,7 +6,6 @@ module SalesTaxes
 		end
 
 		def parse_order(order)
-			#@basket_no = nil
 			order.split(/\n/).each do |line|
 				next if line.empty?
 				next if parse_order_row line
