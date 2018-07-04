@@ -11,10 +11,6 @@ module SalesTaxes
 			compute_grand_total_with_tax
 		end
 
-		def to_hash
-			@order_hash
-		end
-
 		def to_s
 			s = StringIO.new
 			@order_hash[:items].each do |item|

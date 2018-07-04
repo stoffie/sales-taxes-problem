@@ -5,6 +5,12 @@ module SalesTaxes
 			parse_order order
 		end
 
+		def to_hash()
+			return @order_hash
+		end
+
+	private
+
 		def parse_order(order)
 			order.split(/\n/).each do |line|
 				next if line.empty?
@@ -39,10 +45,6 @@ module SalesTaxes
 			else
 				return false
 			end
-		end
-
-		def to_hash()
-			return @order_hash
 		end
 	end
 end
